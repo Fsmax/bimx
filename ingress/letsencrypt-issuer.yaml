@@ -1,0 +1,33 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"cert-manager.io/v1","kind":"ClusterIssuer","metadata":{"annotations":{},"name":"letsencrypt-prod"},"spec":{"acme":{"email":"fsmaxdev@yandex.ru","privateKeySecretRef":{"name":"letsencrypt-prod-account-key"},"server":"https://acme-v02.api.letsencrypt.org/directory","solvers":[{"http01":{"ingress":{"class":"nginx"}}}]}}}
+  creationTimestamp: "2025-03-08T17:54:05Z"
+  generation: 1
+  name: letsencrypt-prod
+  resourceVersion: "330101"
+  uid: 77f5feff-59b7-4bf6-a660-5dfb9e513255
+spec:
+  acme:
+    email: fsmaxdev@yandex.ru
+    privateKeySecretRef:
+      name: letsencrypt-prod-account-key
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+status:
+  acme:
+    lastPrivateKeyHash: cVHPq/o+qYVEM5SkGAu289pdHX3ZmIal0Eq/ezj2Jwk=
+    lastRegisteredEmail: fsmaxdev@yandex.ru
+    uri: https://acme-v02.api.letsencrypt.org/acme/acct/2270242666
+  conditions:
+  - lastTransitionTime: "2025-03-08T17:54:06Z"
+    message: The ACME account was registered with the ACME server
+    observedGeneration: 1
+    reason: ACMEAccountRegistered
+    status: "True"
+    type: Ready

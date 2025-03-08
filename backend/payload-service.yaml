@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"payload-cms","namespace":"application"},"spec":{"ports":[{"port":80,"targetPort":3000}],"selector":{"app":"payload-cms"},"type":"ClusterIP"}}
+  creationTimestamp: "2025-03-08T18:00:02Z"
+  name: payload-cms
+  namespace: application
+  resourceVersion: "347600"
+  uid: 26800c43-a42d-4480-a75b-b230015534ca
+spec:
+  clusterIP: 10.43.82.23
+  clusterIPs:
+  - 10.43.82.23
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: payload-cms
+    pod-template-hash: 5d89dfbb47
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
